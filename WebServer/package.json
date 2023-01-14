@@ -1,0 +1,36 @@
+{
+  "name": "web-application",
+  "version": "0.0.0",
+  "description": "Web site configuration for the bus system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon -e js,html,css,ejs,jsx .",
+    "deno" : "deno task start",
+    "deno-dev" : "nodemon -e js,html,css,ejs,jsx --exec \"deno task start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandhu-44/IeeeHackathon.git"
+  },
+  "keywords": [
+    "ieee",
+    "hackathon",
+    "fullstack"
+  ],
+  "author": "nandhu-44",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nandhu-44/IeeeHackathon/issues"
+  },
+  "homepage": "https://github.com/nandhu-44/IeeeHackathon#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

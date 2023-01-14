@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Bus</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+    />
+    <style>
+      /* Add animation styles */
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      .animation-wave {
+        animation: bounce 1s ease-in-out infinite;
+      }
+      /* Add gradient background */
+      body {
+        background: linear-gradient(to right, #662d8c, #ed1e79);
+        background-size: cover;
+      }
+      /* Center login form */
+      .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .scroll-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="scroll-button bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500"
+    >
+      Login
+    </button>
+    <div class="flex h-screen items-center justify-center">
+      <h1 class="text-4xl font-bold text-center">
+        <span class="animation-wave animate-bounce text-indigo-600">S</span
+        ><span class="animation-wave animate-bounce text-indigo-600">m</span
+        ><span class="animation-wave animate-bounce text-indigo-600">a</span
+        ><span class="animation-wave animate-bounce text-indigo-600">r</span
+        ><span class="animation-wave animate-bounce text-indigo-600">t</span
+        ><span class="animation-wave animate-bounce text-indigo-600"
+          >&nbsp;</span
+        ><span class="animation-wave animate-bounce text-indigo-600">B</span
+        ><span class="animation-wave animate-bounce text-indigo-600">u</span
+        ><span class="animation-wave animate-bounce text-indigo-600">s</span>
+      </h1>
+    </div>
+    <div class="form-container w-full max-w-xs mx-auto mt-8">
+      <form class="bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="email">
+            Email
+          </label>
+          <input
+            class="w-full border border-gray-400 p-2 rounded-lg"
+            type="email"
+            id="email"
+            name="email"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2" for="password">
+            Password
+          </label>
+          <input
+            class="w-full border border-gray-400 p-2 rounded-lg"
+            type="password"
+            id="password"
+            name="password"
+          />
+        </div>
+        <div class="text-center mt-4">
+          <button
+            class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const scrollButton = document.querySelector(".scroll-button");
+      scrollButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script>
+      function hexColors() {
+        let hex = "0123456789ABCDEF";
+        let colors = [];
+        for (let i = 0; i < 6; i++) {
+          let color = "#";
+          for (let j = 0; j < 6; j++) {
+            color += hex[Math.floor(Math.random() * 16)];
+          }
+          colors.push(color);
+        }
+        return colors;
+      }
+      setTimeout(() => {
+        let colors = hexColors();
+        let spans = document.querySelectorAll("span");
+        let i = 0;
+        setInterval(() => {
+          for (let span of spans) {
+            span.style.color = colors[i];
+          }
+          i++;
+          if (i == colors.length) {
+            i = 0;
+          }
+        }, 1000);
+      }, 1000);
+    </script>
+  </body>
+</html>
