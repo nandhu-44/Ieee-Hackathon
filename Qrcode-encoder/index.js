@@ -14,6 +14,11 @@ const data = JSON.stringify(jsonData);
 // Generate the QR code
 qrcode.toDataURL(data, (err, url) => {
   if (err) throw err;
+  try{
   clipboardy.writeSync(url);
+  }catch(e){
+    console.log("Unable to copy to clipboard, please copy the following url manually!");
+    console.log(url)
+  }
   console.log('QR code copied to clipboard!');
 });
